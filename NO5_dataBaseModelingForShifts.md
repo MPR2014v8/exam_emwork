@@ -70,7 +70,6 @@ erDiagram
 3. หากอนุมัติ ให้สลับ `employee_id` ระหว่าง Assignment ทั้งสองรายการภายใน Transaction เดียวกัน
 4. บันทึกผู้อนุมัติและเวลาใน `approved_by` และ `approved_at`
 
-
 ## คำนวณเบี้ยเลี้ยงกะดึก
 
 ```sql
@@ -81,6 +80,6 @@ FROM shift_assignments sa
 JOIN shifts s
     ON s.id = sa.shift_id
 WHERE sa.work_date BETWEEN '2026-03-01' AND '2026-03-31'
+  AND s.name = 'Night'
 GROUP BY sa.employee_id;
 ```
-
